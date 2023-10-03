@@ -5,10 +5,17 @@ namespace cherepashki
     internal static class DBConn
     {
         static MySqlConnection connection;
+        static string state = "";
+        public static string GetState()
+        {
+            return state;
+        }
         public static MySqlConnection StartConnection(string auditoriya)
         {
-            const string ip_112 = "Server=192.168.56.101;User ID=student;Password=1234567890;Database=test";
-            const string ip_306 = "Server=192.168.56.102;User ID=student;Password=1234567890;Database=test";
+            const string ip_112 = "Server=192.168.56.101;User ID=student;" +
+                "Password=1234567890;Database=test";
+            const string ip_306 = "Server=192.168.56.102;User ID=student;" +
+                "Password=1234567890;Database=test";
             switch (auditoriya)
             {
                 case "112":
@@ -27,6 +34,7 @@ namespace cherepashki
                 {
                     connection.Open();
                     Debug.WriteLine("Подключение прошло");
+                    state = "Подключение к БД успешно";
                 }
                 catch (MySqlException ex) 
                 {
@@ -34,6 +42,7 @@ namespace cherepashki
                     if (ex.Message== "Connect Timeout expired.")
                     {
                         Debug.WriteLine("Ошибка подключения");
+                        state = "Подключение не удалось";
                     }
                 }
             }
