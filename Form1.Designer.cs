@@ -43,7 +43,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(369, 279);
+            this.button1.Location = new System.Drawing.Point(478, 259);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 34);
             this.button1.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(333, 73);
+            this.label1.Location = new System.Drawing.Point(442, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 29);
             this.label1.TabIndex = 1;
@@ -64,7 +64,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(218, 147);
+            this.textBox1.Location = new System.Drawing.Point(327, 127);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(396, 34);
             this.textBox1.TabIndex = 3;
@@ -73,7 +73,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(247, 115);
+            this.label2.Location = new System.Drawing.Point(356, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(338, 29);
             this.label2.TabIndex = 4;
@@ -82,7 +82,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(218, 216);
+            this.textBox2.Location = new System.Drawing.Point(327, 196);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(396, 34);
             this.textBox2.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(314, 184);
+            this.label3.Location = new System.Drawing.Point(423, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(204, 29);
             this.label3.TabIndex = 6;
@@ -133,9 +133,9 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(12, 84);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 34);
+            this.button2.Size = new System.Drawing.Size(246, 40);
             this.button2.TabIndex = 10;
-            this.button2.Text = "GO";
+            this.button2.Text = "подключиться к БД";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

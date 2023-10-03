@@ -23,8 +23,19 @@ namespace cherepashki
             }
             if (connection != null)
             {
-                connection.Open();
-                Debug.Print(connection.ServerVersion);
+                try
+                {
+                    connection.Open();
+                    Debug.WriteLine("Подключение прошло");
+                }
+                catch (MySqlException ex) 
+                {
+                    connection = null;
+                    if (ex.Message== "Connect Timeout expired.")
+                    {
+                        Debug.WriteLine("Ошибка подключения");
+                    }
+                }
             }
             return connection;
         }
