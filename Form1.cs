@@ -14,23 +14,25 @@ namespace cherepashki
 
         private void button1_Click(object sender, EventArgs e)
         {//кнопка логина с кривым запросом
-            string request = "SELECT integer FROM testTable1 WHERE name=";
-            request += textBox1.Text.Trim();
-            
-            MySqlCommand cmd = new MySqlCommand(request);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            listBox1.Items.Add(reader.GetString(0));
+            DBConn.StartConnection();
+            string request = "SELECT password FROM users WHERE login=";
+            request = request + "'" + textBox1.Text.Trim() + "'";
+            MySqlCommand command = new MySqlCommand(request, DBConn.GetConnection());
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+                listBox1.Items.Add(reader.GetString(0));
+            DBConn.CloseConn();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {//кнопка подключения
             label5.Text = "Подключение...";
-            DBConn.StartConnection(comboBox1.Text);
+            DBConn.StartConnection();
             label5.Text = DBConn.GetState();
         }
     }

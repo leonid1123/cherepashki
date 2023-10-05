@@ -10,24 +10,20 @@ namespace cherepashki
         {
             return state;
         }
-        public static MySqlConnection StartConnection(string auditoriya)
+        public static MySqlConnection GetConnection()
+        {//метод может вернуть подключение со значением null!!!
+         //необходима проверка
+            return connection;
+        }
+        public static void CloseConn()
+        {
+            connection.Close();
+        }
+        public static MySqlConnection StartConnection()
         {
             const string ip_112 = "Server=192.168.56.101;User ID=student;" +
                 "Password=1234567890;Database=test";
-            const string ip_306 = "Server=192.168.56.102;User ID=student;" +
-                "Password=1234567890;Database=test";
-            switch (auditoriya)
-            {
-                case "112":
-                    connection = new MySqlConnection(ip_112);
-                    break;
-                case "306":
-                    connection = new MySqlConnection(ip_306);
-                    break;
-                default:
-                    connection = null;
-                    break;
-            }
+            connection = new MySqlConnection(ip_112);
             if (connection != null)
             {
                 try
@@ -36,14 +32,13 @@ namespace cherepashki
                     Debug.WriteLine("Подключение прошло");
                     state = "Подключение к БД успешно";
                 }
-                catch (MySqlException ex) 
+                catch (MySqlException ex)
                 {
                     connection = null;
-                    if (ex.Message== "Connect Timeout expired.")
-                    {
-                        Debug.WriteLine("Ошибка подключения");
-                        state = "Подключение не удалось";
-                    }
+                    Debug.WriteLine("Подключение не произошло");
+                    Debug.WriteLine(ex.Message);
+                    Debug.WriteLine(ex.ErrorCode);
+                    state = "Подлючение не произошло";
                 }
             }
             return connection;
